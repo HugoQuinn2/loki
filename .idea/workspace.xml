@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4cd4c-738e-4586-a646-1168752c46a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/loki.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/converters/csv_converter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/converters/json_converter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exceptions/ErrorParsingFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exceptions/ErrorReadingFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exceptions/ExtensionNotSupported.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exceptions/FileNotFound.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loki.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/file_utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="f3f4cd4c-738e-4586-a646-1168752c46a8" name="Changes" comment="🎉 Begin project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HugoQuinn2"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/HugoQuinn2/loki.git",
+    "accountId": "8158016d-4ded-455b-a0ac-fcdeca612ef9"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -46,15 +43,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.json.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Shell Script.json.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vgaspar/PycharmProjects/loki&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.json.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Shell Script.json.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/vgaspar/PycharmProjects/loki"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vgaspar\PycharmProjects\loki" />
@@ -123,6 +120,19 @@
       <option name="presentableId" value="Default" />
       <updated>1741191328311</updated>
     </task>
+    <task id="LOCAL-00001" summary="🎉 Begin project">
+      <option name="closed" value="true" />
+      <created>1741204138445</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741204138445</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" Begin project" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Begin project" />
   </component>
 </project>
