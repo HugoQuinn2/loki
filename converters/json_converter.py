@@ -1,5 +1,6 @@
 import csv
 import yaml
+import xmltodict
 import os.path
 from enum import Enum
 from typing import List, Any
@@ -29,8 +30,9 @@ def convert(input_file: str, conversion_type: Conversion):
         elif file_in_type == 'yaml':
             file_in_content = yaml.safe_load(read_file_in)
             return _convert_yaml_to_json(file_in_content, conversion_type=conversion_type)
-
-
+        elif file_in_type == 'xml':
+            file_in_content = xmltodict.parse(read_file_in.read())
+            return _convert_xml_to_json(file_in_content, conversion_type)
 
 def _convert_csv_to_json(headers: List[str], csv_data: Any, conversion_type: Conversion) -> Any:
     if conversion_type == Conversion.KEYED:
@@ -72,6 +74,38 @@ def _convert_yaml_to_json(yaml_data: Any, conversion_type: Conversion) -> Any:
 
     elif conversion_type == Conversion.LIST:
         return yaml_data
+
+    else:
+        raise ErrorParingFile(f"Type conversion {conversion_type} not valid.")
+
+
+def _convert_xml_to_json(xml_data: Any, conversion_type: Conversion) -> Any:
+    if not isinstance(xml_data, dict):
+        raise ErrorParingFile("Invalid XML format. Expected a dictionary after parsing.")
+
+    keys = list(xml_data.keys())
+    root_key = keys[0] if len(keys) == 1 else "root"
+    content = xml_data[root_key]
+
+    if conversion_type == Conversion.KEYED:
+        if isinstance(content, list):
+            return {str(i): item for i, item in enumerate(content)}
+        return {root_key: content}
+
+    elif conversion_type == Conversion.JSON_ARRAY:
+        return content if isinstance(content, list) else [content]
+
+    elif conversion_type == Conversion.JSON_COLUMN_ARRAY:
+        if isinstance(content, list):
+            columns = {key: [] for key in content[0].keys()} if content else {}
+            for item in content:
+                for key, value in item.items():
+                    columns[key].append(value)
+            return columns
+        return {root_key: content}
+
+    elif conversion_type == Conversion.LIST:
+        return content if isinstance(content, list) else [content]
 
     else:
         raise ErrorParingFile(f"Type conversion {conversion_type} not valid.")

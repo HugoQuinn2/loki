@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4cd4c-738e-4586-a646-1168752c46a8" name="Changes" comment="🎉 Begin project" />
+    <list default="true" id="f3f4cd4c-738e-4586-a646-1168752c46a8" name="Changes" comment="🎉 Begin project">
+      <change afterPath="$PROJECT_DIR$/example.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/converters/json_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/converters/json_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loki.py" beforeDir="false" afterPath="$PROJECT_DIR$/loki.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +53,7 @@
     "Python.json.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Shell Script.json.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/vgaspar/PycharmProjects/loki"
   }
 }]]></component>
@@ -128,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741204138445</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="🎉 Begin project">
+      <option name="closed" value="true" />
+      <created>1741205058085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741205058085</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
