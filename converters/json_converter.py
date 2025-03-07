@@ -12,13 +12,13 @@ from utils.file_utils import get_file_extension
 
 valid_files_type = ['csv', 'xml', 'yaml']
 
-class Conversion(Enum):
+class JsonConversion(Enum):
     KEYED = 'keyed'
     JSON_ARRAY = 'array'
     JSON_COLUMN_ARRAY = 'colum-array'
     LIST = 'list'
 
-def convert(input_file: str, conversion_type: Conversion):
+def convert(input_file: str, conversion_type: JsonConversion):
     is_valid_file_in(input_file)
     file_in_type = get_file_extension(input_file)
 
@@ -34,33 +34,33 @@ def convert(input_file: str, conversion_type: Conversion):
             file_in_content = xmltodict.parse(read_file_in.read())
             return _convert_xml_to_json(file_in_content, conversion_type)
 
-def _convert_csv_to_json(headers: List[str], csv_data: Any, conversion_type: Conversion) -> Any:
-    if conversion_type == Conversion.KEYED:
+def _convert_csv_to_json(headers: List[str], csv_data: Any, conversion_type: JsonConversion) -> Any:
+    if conversion_type == JsonConversion.KEYED:
         return {row[0]: dict(zip(headers[1:], row[1:])) for row in csv_data}
-    elif conversion_type == Conversion.JSON_ARRAY:
+    elif conversion_type == JsonConversion.JSON_ARRAY:
         return list(csv_data)
-    elif conversion_type == Conversion.JSON_COLUMN_ARRAY:
+    elif conversion_type == JsonConversion.JSON_COLUMN_ARRAY:
         columns = {header: [] for header in headers}
         for row in csv_data:
             for header, valor in zip(headers, row):
                 columns[header].append(valor)
         return columns
-    elif conversion_type == Conversion.LIST:
+    elif conversion_type == JsonConversion.LIST:
         return [dict(zip(headers, row)) for row in csv_data]
     else:
         raise ErrorParingFile(f"Type conversion {conversion_type} not valid.")
 
-def _convert_yaml_to_json(yaml_data: Any, conversion_type: Conversion) -> Any:
-    if conversion_type == Conversion.KEYED:
+def _convert_yaml_to_json(yaml_data: Any, conversion_type: JsonConversion) -> Any:
+    if conversion_type == JsonConversion.KEYED:
         if isinstance(yaml_data, dict):
             return yaml_data
         elif isinstance(yaml_data, list):
             return {i: item for i, item in enumerate(yaml_data)}
 
-    elif conversion_type == Conversion.JSON_ARRAY:
+    elif conversion_type == JsonConversion.JSON_ARRAY:
         return list(yaml_data) if isinstance(yaml_data, (list, dict)) else [yaml_data]
 
-    elif conversion_type == Conversion.JSON_COLUMN_ARRAY:
+    elif conversion_type == JsonConversion.JSON_COLUMN_ARRAY:
         if isinstance(yaml_data, dict):
             return {key: [value] for key, value in yaml_data.items()}
         elif isinstance(yaml_data, list) and all(isinstance(item, dict) for item in yaml_data):
@@ -72,14 +72,14 @@ def _convert_yaml_to_json(yaml_data: Any, conversion_type: Conversion) -> Any:
         else:
             raise ErrorParingFile("YAML data format is not suitable for column-array conversion.")
 
-    elif conversion_type == Conversion.LIST:
+    elif conversion_type == JsonConversion.LIST:
         return yaml_data
 
     else:
         raise ErrorParingFile(f"Type conversion {conversion_type} not valid.")
 
 
-def _convert_xml_to_json(xml_data: Any, conversion_type: Conversion) -> Any:
+def _convert_xml_to_json(xml_data: Any, conversion_type: JsonConversion) -> Any:
     if not isinstance(xml_data, dict):
         raise ErrorParingFile("Invalid XML format. Expected a dictionary after parsing.")
 
@@ -87,15 +87,15 @@ def _convert_xml_to_json(xml_data: Any, conversion_type: Conversion) -> Any:
     root_key = keys[0] if len(keys) == 1 else "root"
     content = xml_data[root_key]
 
-    if conversion_type == Conversion.KEYED:
+    if conversion_type == JsonConversion.KEYED:
         if isinstance(content, list):
             return {str(i): item for i, item in enumerate(content)}
         return {root_key: content}
 
-    elif conversion_type == Conversion.JSON_ARRAY:
+    elif conversion_type == JsonConversion.JSON_ARRAY:
         return content if isinstance(content, list) else [content]
 
-    elif conversion_type == Conversion.JSON_COLUMN_ARRAY:
+    elif conversion_type == JsonConversion.JSON_COLUMN_ARRAY:
         if isinstance(content, list):
             columns = {key: [] for key in content[0].keys()} if content else {}
             for item in content:
@@ -104,7 +104,7 @@ def _convert_xml_to_json(xml_data: Any, conversion_type: Conversion) -> Any:
             return columns
         return {root_key: content}
 
-    elif conversion_type == Conversion.LIST:
+    elif conversion_type == JsonConversion.LIST:
         return content if isinstance(content, list) else [content]
 
     else:
