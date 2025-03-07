@@ -18,7 +18,7 @@ class JsonConversion(Enum):
     JSON_COLUMN_ARRAY = 'colum-array'
     LIST = 'list'
 
-def convert(input_file: str, conversion_type: JsonConversion):
+def json_convert(input_file: str, conversion_type: JsonConversion):
     is_valid_file_in(input_file)
     file_in_type = get_file_extension(input_file)
 

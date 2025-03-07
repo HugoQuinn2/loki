@@ -3,7 +3,7 @@ import os
 import click
 import json as jzon
 
-from converters.json_converter import JsonConversion, convert
+from converters.json_converter import JsonConversion, json_convert
 from utils.file_utils import create_output_file_name
 
 @click.group()
@@ -18,7 +18,7 @@ def cli():
 def json(input_file: str, conversion_type: str, output: str, export:bool):
     try:
         conversion_type = JsonConversion(conversion_type)
-        parse = convert(input_file=input_file, conversion_type=conversion_type)
+        parse = json_convert(input_file=input_file, conversion_type=conversion_type)
 
         if export:
             if not output:
