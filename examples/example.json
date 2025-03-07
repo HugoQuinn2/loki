@@ -1,0 +1,42 @@
+{
+    "dict1": {
+        "list": [
+            {
+                "id": 1,
+                "name": "name1"
+            },
+            {
+                "id": 2,
+                "name": "name2"
+            }
+        ],
+        "sub-dict": {
+            "color": "blue",
+            "size": 10
+        }
+    },
+    "dict2": {
+        "list": [
+            {
+                "id": 1,
+                "name": "name11"
+            },
+            {
+                "id": 2,
+                "name": "name12"
+            }
+        ]
+    },
+    "dict3": {
+        "list2": [
+            {
+                "id": 1,
+                "name": "name11"
+            },
+            {
+                "id": 2,
+                "name": "name12"
+            }
+        ]
+    }
+}

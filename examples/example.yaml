@@ -1,0 +1,15 @@
+- Direccion:
+    Ciudad: Madrid
+    CodigoPostal: '28001'
+  Edad: 28
+  Nombre: Juan
+- Direccion:
+    Ciudad: Barcelona
+    CodigoPostal: '08001'
+  Edad: 22
+  Nombre: Ana
+- Direccion:
+    Ciudad: Valencia
+    CodigoPostal: '46001'
+  Edad: 32
+  Nombre: Luis

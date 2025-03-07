@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Personas>
+    <Persona>
+        <Nombre>Juan</Nombre>
+        <Edad>28</Edad>
+        <Direccion>
+            <Ciudad>Madrid</Ciudad>
+            <CodigoPostal>28001</CodigoPostal>
+        </Direccion>
+    </Persona>
+    <Persona>
+        <Nombre>Ana</Nombre>
+        <Edad>22</Edad>
+        <Direccion>
+            <Ciudad>Barcelona</Ciudad>
+            <CodigoPostal>08001</CodigoPostal>
+        </Direccion>
+    </Persona>
+    <Persona>
+        <Nombre>Luis</Nombre>
+        <Edad>32</Edad>
+        <Direccion>
+            <Ciudad>Valencia</Ciudad>
+            <CodigoPostal>46001</CodigoPostal>
+        </Direccion>
+    </Persona>
+</Personas>
