@@ -10,7 +10,7 @@ from utils.file_utils import create_output_file_name
 def cli():
     pass
 
-@cli.command(help="Convert file to JSON")
+@cli.command(help="Convert file [.csv, .xml & .yaml] to JSON")
 @click.argument('input_file', required=False, type=click.Path(exists=True))
 @click.option('--type', '-t', 'conversion_type', type=click.Choice([t.value for t in JsonConversion], case_sensitive=False), default=JsonConversion.LIST.value)
 @click.option('--output', '-o', help="If the file is exported, define name file.")
