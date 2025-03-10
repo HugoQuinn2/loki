@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Juan Pérez",
+    "username": "juanp123",
+    "email": "juan.perez@ejemplo.com",
+    "phone": "+34 600 123 456",
+    "dob": "1985-06-15",
+    "is_active": true,
+    "tag": ["employed"],
+    "address": {
+      "city": "Madrid",
+      "street": "Calle Gran Vía 28",
+      "geo": {
+        "lat": "40.4196",
+        "long": "-3.7044"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "name": "María Rodríguez",
+    "username": "mariarod",
+    "email": "maria.rodriguez@ejemplo.com",
+    "phone": "+34 600 987 654",
+    "dob": "1990-09-23",
+    "is_active": true,
+    "tag": ["employed", "admin"],
+    "address": {
+      "city": "Barcelona",
+      "street": "Avenida Diagonal 123",
+      "geo": {
+        "lat": "41.3902",
+        "long": "2.1540"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "name": "Carlos Gómez",
+    "username": "cargomez",
+    "email": "carlos.gomez@ejemplo.com",
+    "phone": "+34 622 321 654",
+    "dob": "1978-11-30",
+    "is_active": false,
+    "tag": ["employed", "admin"],
+    "address": {
+      "city": "Valencia",
+      "street": "Plaza Mayor 5",
+      "geo": {
+        "lat": "39.4699",
+        "long": "-0.3763"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "name": "Laura Martínez",
+    "username": "lauramtz",
+    "email": "laura.martinez@ejemplo.com",
+    "phone": "+34 611 555 777",
+    "dob": "1992-03-12",
+    "is_active": true,
+    "tag": ["employed", "admin"],
+    "address": {
+      "city": "Sevilla",
+      "street": "Calle Sierpes 42",
+      "geo": {
+        "lat": "37.3886",
+        "long": "-5.9953"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "name": "Miguel Fernández",
+    "username": "migfer",
+    "email": "miguel.fernandez@ejemplo.com",
+    "phone": "+34 633 999 111",
+    "dob": "1988-01-25",
+    "is_active": false,
+    "tag": ["employed"],
+    "address": {
+      "city": "Bilbao",
+      "street": "Gran Vía 76",
+      "geo": {
+        "lat": "43.2630",
+        "long": "-2.9350"
+      }
+    }
+  }
+]

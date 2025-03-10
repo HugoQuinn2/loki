@@ -10,7 +10,9 @@ from exceptions.ErrorParsingFile import ErrorParingFile
 from exceptions.ExtensionNotSupported import ExtensionNotSupported
 from exceptions.FileNotFound import FileNotFound
 from utils.file_utils import get_file_extension
-from utils.json_utils import _get_json_list, _get_csv_json_headers
+from utils.json_utils import get_json_list, get_csv_json_headers
+
+from utils.json_utils import get_nested_value
 
 valid_files_type = ['json', 'xml', 'yaml']
 
@@ -46,11 +48,9 @@ def is_valid_file_in(file_in):
 
 def _convert_json_to_csv(data: Any, conversion_type: CsvConverter):
     if conversion_type == CsvConverter.LIST:
-        parse_data = _get_json_list(data)
-        headers = _get_csv_json_headers(data)
-        print(headers)
+        headers = get_csv_json_headers(data)
         output = [','.join(headers)]
-        output.extend([','.join(str(d.get(h, '')) for h in headers) for d in data])
+        output.extend([','.join(str(get_nested_value(data, h)) for h in headers) for d in data])
         return '\n'.join(output)
     elif conversion_type == CsvConverter.KEYED:
         print()
